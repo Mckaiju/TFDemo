@@ -29,7 +29,6 @@ resource "aws_instance" "Demo" {
       private_key = file("/home/jmauney/aws_key")
       timeout     = "4m"
    }
-}
   
   user_data = <<-EOL
   #!/bin/bash
