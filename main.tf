@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region  = "us-east-1"
 }
 
 resource "aws_instance" "Demo" {
@@ -19,7 +19,7 @@ resource "aws_instance" "Demo" {
   provisioner "remote-exec" {
     inline = [
       "touch hello.txt",
-      "echo helloworld remote provisioner >> hello.txt",
+      "echo hello world! >> hello.txt",
     ]
   }
   connection {
@@ -81,7 +81,6 @@ resource "aws_security_group" "main" {
   }
   ]
 }
-
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws_key"
